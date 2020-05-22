@@ -1,0 +1,16 @@
+<h1>Homes#index</h1>
+<p>Find me in app/views/homes/index.html.erb</p>
+
+<%= "現在のユーザー#{current_user.id}"%>
+
+
+
+<%= link_to "代理", "/dairi"%>
+
+<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+
+
+<% @users.each do |user|%>
+ <%= link_to "#{user.email}" , home_path(user) %>
+
+<%end%>
